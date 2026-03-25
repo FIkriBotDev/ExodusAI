@@ -28,7 +28,7 @@ const uploadFile = async (buffer) => {
         let form = new FormData();
         form.append('file', buffer, 'tmp.' + ext);
 
-        const response = await axios.post('https://uploader.exodusai.biz.id/upload', form, {
+        const response = await axios.post('http://localhost:9000/upload', form, {
             headers: {
                 ...form.getHeaders(),
             },
@@ -57,29 +57,14 @@ let userDocxMap = {}; // untuk menyimpan URL docx terakhir
 
 function getConversation(userId) {
     if (!userConversations[userId]) {
-        const fileName = userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-                         userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-                         userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-                         userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-                         userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-                         userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-                         userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-                         userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' : '/home/runner/work/tes-sshd/tes-sshd/database.json';
+        const fileName = userId === '628xxxxxxx@s.whatsapp.net' ? 'special_user.json' : 'database.json';
         userConversations[userId] = loadConversation(fileName);
     }
     return userConversations[userId];
 }
 function reloadChatbotConversation(userId) {
     const fileName =
-        userId === '6287863293173@s.whatsapp.net' ? 'dika.json' :
-        userId === '6287824613268@s.whatsapp.net' ? 'say.json' :
-        userId === '6283140117292@s.whatsapp.net' ? 'cece.json' :
-        userId === '6282269995370@s.whatsapp.net' ? 'sis.json' :
-        userId === '6282142719548@s.whatsapp.net' ? 'fu.json' :
-        userId === '62895351640508@s.whatsapp.net' ? 'april.json' :
-        userId === '6283897921042@s.whatsapp.net' ? 's.json' :
-        userId === '6285271848176@s.whatsapp.net' ? 'nuni.json' :
-        '/home/runner/work/tes-sshd/tes-sshd/database.json';
+        userId === '628xxxxxxx@s.whatsapp.net' ? 'special_user.json' : 'database.json';
 
     userConversations[userId] = loadConversation(fileName);
 }
@@ -204,7 +189,7 @@ async function startBot() {
 
                 const caption = m.message.documentMessage.caption;
                 if (caption) {
-                    const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
+                    const apiUrl = `http://localhost:1000/api/edit?documentUrl=${encodeURIComponent(uploadedFileUrl)}&prompt=${encodeURIComponent(caption)}`;
                     const response = await fetch(apiUrl);
                     const docxBuffer = await response.buffer();
                     await sock.sendMessage(sender, {
@@ -228,7 +213,7 @@ async function startBot() {
             try {
                 const documentUrl = userDocxMap[sender];
                 const prompt = userMessage;
-                const apiUrl = `https://docx-ai.exodusai.biz.id/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
+                const apiUrl = `http://localhost:1000/api/edit?documentUrl=${encodeURIComponent(documentUrl)}&prompt=${encodeURIComponent(prompt)}`;
                 const response = await fetch(apiUrl);
                 const docxBuffer = await response.buffer();
                 await sock.sendMessage(sender, {
