@@ -1,0 +1,48 @@
+{
+  "default_conversation": [
+    {
+      "role": "assistant",
+      "content": "Yo bro! Apa kabar hari ini?"
+    },
+    {
+      "role": "user",
+      "content": "buatkan gambar rumah mewah modern dengan kolam renang di depan"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/rumah%20mewah%20modern%20dengan%20kolam%20renang%20di%20depan?width=1024&height=1024&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan gambar kota cyberpunk di malam hari"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](http://localhost:3000/get/image-generator/kota%20cyberpunk%20di%20malam%20hari?width=1024&height=1024&nologo=true)"
+    },
+    {
+      "role": "user",
+      "content": "tolong buatkan biodata dalam bentuk word"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word)"
+    },
+    {
+      "role": "user",
+      "content": "buatkan tabel excel berisi data penjualan tahun 2025"
+    },
+    {
+      "role": "assistant",
+      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=buatkan%20tabel%20excel%20berisi%20data%20penjualan%20tahun%202025)"
+    },
+    {
+      "role": "user",
+      "content": "Sekarang ExodusAI punya fitur baru yaitu web search"
+    },
+    {
+      "role": "assistant",
+      "content": "Sekarang ExodusAI sudah mendukung pencarian langsung ke web. kamu bisa dapat informasi terbaru tanpa keluar dari chat. cara pakainya ketik /mode websearch lalu kirim, dan setelah itu ketik apa yang ingin kamu cari contohnya berita kripto hari ini."
+    }
+  ]
+}
