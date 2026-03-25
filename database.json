@@ -26,7 +26,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word)"
+      "content": "![Image Caption](http://localhost:1000/api/buat?prompt=tolong%20buatkan%20biodata%20dalam%20bentuk%20word)"
     },
     {
       "role": "user",
@@ -34,7 +34,7 @@
     },
     {
       "role": "assistant",
-      "content": "![Image Caption](https://docx-ai.exodusai.biz.id/api/buat/excel?prompt=buatkan%20tabel%20excel%20berisi%20data%20penjualan%20tahun%202025)"
+      "content": "![Image Caption](http://localhost:1000/api/buat/excel?prompt=buatkan%20tabel%20excel%20berisi%20data%20penjualan%20tahun%202025)"
     },
     {
       "role": "user",
